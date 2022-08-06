@@ -41,7 +41,6 @@ const App = () => {
           <Route path="/admin-settings" element={ <EmpSetting /> } />
           <Route path="/update/:id" element={ <EmpUpdate /> } />
       </Routes>
-
     </Suspense>
   )
 }
