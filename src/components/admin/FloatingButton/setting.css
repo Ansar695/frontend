@@ -1,0 +1,43 @@
+.icon{
+    position: fixed;
+    top: 80%;
+    bottom: 5%;
+    left: 90%;
+    right: 5%;
+    background-color: transparent;
+}
+.icon i{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    background-color: rgb(22, 113, 156);
+    border-radius: 50%;
+    color: white;
+    box-shadow: 1px 1px 15px .1px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 650px){
+    .icon{
+        top: 85%;
+        left: 85%;
+        right: 5%;
+    }
+}
+@media screen and (max-width: 450px){
+    .icon{
+        top: 85%;
+        left: 80%;
+        right: 10%;
+    }
+}
+@media screen and (max-width: 350px){
+    .icon{
+        top: 85%;
+        left: 75%;
+        right: 15%;
+    }
+}

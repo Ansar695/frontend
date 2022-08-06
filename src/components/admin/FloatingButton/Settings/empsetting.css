@@ -1,0 +1,158 @@
+.emp_setting{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.emp_setting .top{
+    width: 94%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.emp_setting .top select{
+    padding: .4rem 1.5rem;
+    border: 1px solid rgb(22, 113, 156);
+    border-radius: 4px;
+    font-size: 17px;
+}
+.emp_setting .top button{
+    border: none;
+    outline: none;
+    background-color: rgb(22, 113, 156);
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+.emp_setting .bottom{
+    width: 94%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.emp_setting .bottom .search{
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.emp_setting .bottom .search .input{
+    width: 30%;
+    height: 30px;
+    border: .5px solid silver;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem .4rem;
+}
+.emp_setting .bottom .search .input input{
+    outline: none;
+    border: none;
+    width: 80%;
+    height: 100%;
+}
+.emp_setting .bottom .search .input i{
+    color: rgb(22, 113, 156);
+    font-size: 18px;
+    cursor: pointer;
+}
+.emp_setting .bottom .low{
+    width: 90%;
+    overflow-x: auto;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.emp_setting .bottom .low table{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    min-width: 850px;
+    overflow-x: auto;
+}
+.emp_setting .bottom .low table, tr, td, th{
+    border: .5px solid silver;
+    border-collapse: collapse;
+    padding: .5rem 1rem;
+}
+.emp_setting .bottom .low table th{
+    background-color: rgb(22, 113, 156);
+    color: white;
+    font-weight: 500;
+}
+.emp_setting .bottom .low table tbody tr td{
+    padding: .2rem 1rem;
+}
+.emp_setting .bottom .low table tbody tr td .fa{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    background-color: rgb(22, 113, 156);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+.emp_setting .bottom .low table tbody tr #last_child{
+    padding: .2rem 0rem;
+}
+.emp_setting .bottom .low table tbody tr td .fa-trash{
+    background-color: red;
+    margin-left: .4rem;
+}
+
+
+@media screen and (max-width: 900px){
+    .emp_setting .bottom .low{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    .emp_setting .top select{
+        padding: .4rem .6rem;
+        font-size: 15px;
+    }
+    .emp_setting .top button{
+        padding: .5rem .6rem;
+        font-size: 14px;
+    }
+    .emp_setting .bottom .search .input{
+        width: 50%;
+        padding: 0rem .3rem;
+    }
+    .emp_setting .bottom .search .input input{
+        width: 85%;
+    }
+}
+
+
+@media screen and (max-width: 400px){
+    .emp_setting .top select{
+        padding: .3rem .4rem;
+        font-size: 12px;
+    }
+    .emp_setting .top button{
+        padding: .5rem;
+        font-size: 12px;
+    }
+    .emp_setting .bottom .search h2{
+        font-size: 20px;
+    }
+    .emp_setting .bottom .search .input{
+        width: 55%;
+        height: 26px;
+        padding: 0rem .1rem;
+    }
+    .emp_setting .bottom .search .input input{
+        width: 90%;
+    }
+}

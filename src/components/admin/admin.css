@@ -1,0 +1,209 @@
+.admin_main{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.admin_main .admin_intro{
+    width: 100%;
+    height: auto;
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid yellow;
+    background-color: white;
+}
+.admin_main .admin_intro .avatar{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(22, 113, 156);
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+}
+.admin_main .admin_intro h2{
+    font-weight: 500;
+}
+.admin_main .details{
+    width: 100%;
+    height: auto;
+    padding: 1rem 0rem;
+}
+.admin_main .details .top{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.admin_main .details .top .date{
+    width: 250px;
+    padding: .4rem 0rem;
+    text-align: center;
+    border: .5px solid rgb(184, 182, 182);
+    background-color: white;
+}
+.admin_main .details .top #profile{
+    outline: none;
+    border: none;
+    background-color: rgb(22, 113, 156);
+    color: white;
+    border-radius: 4px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.admin_main .details .low{
+    width: 90%;
+    overflow-x: auto;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.admin_main .details .low .search{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.admin_main .details .low .search .menus{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(22, 113, 156);
+}
+.admin_main .details .low .search .menus p{
+    padding: .5rem .8rem;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: transparent;
+    color: black;
+    margin-right: .1rem;
+    transition: all .2s ease;
+}
+.admin_main .details .low .search .menus .active{
+    background-color: rgb(22, 113, 156);
+    color: white;
+}
+.admin_main .details .low .search .input{
+    width: 35%;
+    height: 30px;
+    border: .1px solid silver;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem .5rem;
+}
+.admin_main .details .low .search .input input{
+    border: none;
+    outline: none;
+    width: 80%;
+    height: 100%;
+    font-size: 15px;
+}
+.admin_main .details .low .search .input i{
+    font-size: 18px;
+    color: rgb(22, 113, 156);
+    cursor: pointer;
+}
+.admin_main .details .low table{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    min-width: 900px;
+    overflow-x: auto;
+}
+.admin_main .details .low table, tr, td, th{
+    border: .5px solid silver;
+    border-collapse: collapse;
+    padding: .5rem 1rem;
+}
+.admin_main .details .low table th{
+    background-color: rgb(22, 113, 156);
+    color: white;
+    font-weight: 500;
+}
+
+
+.update_overlay{
+    position: fixed;
+    top: -100%;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 12;
+    transition: all .3s ease;
+}
+.update_overlay_active{
+    top: 50px;
+    bottom: 0;
+}
+
+
+
+
+
+@media screen and (max-width: 900px){
+    .admin_main .details .low{
+        width: 94%;
+    }
+    .admin_main .details .top{
+        width: 94%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .admin_main .details .low .search .menus p{
+        padding: .5rem .6rem;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+    }
+    .admin_main .details .low .search .input{
+        width: 25%;
+        padding: 0rem .3rem;
+    }
+    .admin_main .details .low .search .input input{
+        width: 85%;
+    }
+}
+
+@media screen and (max-width : 500px){
+    .admin_main .details .top{
+        width: 94%;
+        flex-direction: column;
+    }
+    .admin_main .details .top .date{
+        margin-bottom: 2rem;
+    }
+    .admin_main .details .low .search{
+        height: auto;
+        flex-direction: column-reverse;
+    }
+    .admin_main .details .low .search .menus{
+        margin-top: 2rem;
+    }
+    .admin_main .details .low .search .input{
+        width: 60%;
+        padding: 0rem .3rem;
+    }
+    .admin_main .details .low .search .input input{
+        width: 85%;
+    }
+}
+
+
+@media screen and (max-width : 400px){
+    .admin_main .details .low .search .menus p{
+        padding: .5rem;
+        font-size: 14px;
+    }
+}
