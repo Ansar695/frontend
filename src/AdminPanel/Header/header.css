@@ -1,0 +1,92 @@
+.nav{
+    position: fixed;
+    top: 0px;
+    bottom: calc(100% - 60px);
+    left: 0;
+    right: 0;
+    background-color: var(--logo_color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+.fa-bars{
+    color: white;
+    font-size: 20px;
+    margin-right: 1.5rem;
+    display: none;
+    cursor: pointer;
+}
+.fa-times{
+    color: white;
+    font-size: 20px;
+    margin-right: 1.5rem;
+    display: none;
+    cursor: pointer;
+}
+.nav .logo_img{
+    width: 40px;
+    height: 40px;
+    margin-left: 1rem;
+}
+.nav .logo_name{
+    color: white;
+    margin-left: .5rem;
+    font-size: 22px;
+}
+.dashboard{
+    position: fixed;
+    top: 60px;
+    bottom: 0px;
+    left: 0%;
+    right: 82%;
+    background-color: var(--logo_color);
+    overflow: hidden;
+    min-width: 180px;
+    z-index: 10000;
+    display: block;
+}
+.panels{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.panels:last-child{
+    border-bottom: 1px solid #fff;
+}
+.navlink{
+    width: 100%;
+    padding: .8rem 0rem;
+    padding-left: 1rem;
+    border-top: 1px solid #fff;
+    font-size: 17px;
+    color: #fff;
+    transition: all .2s ease;
+}
+.active{
+    background-color: rgb(224, 243, 239, 0.3)
+}
+
+.panels .fa-caret-down, .fa-caret-up{
+    margin-left: 30%;
+}
+
+
+@media screen and (max-width: 900px) {
+    .fa-bars{
+        display: block;
+    }
+    .fa-times{
+        display: block;
+    }
+    .dashboard{
+        display: none;
+    }
+    .dashboard_active{
+        display: block;
+    }
+    .panels .fa-caret-down, .fa-caret-up{
+        margin-left: 30%;
+    }
+}

@@ -1,0 +1,504 @@
+.dashboard_main{
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    overflow: hidden;
+    margin-top: 60px;
+}
+.dashboard_main .left{
+    width: 18%;
+    height: calc(100vh - 60px);
+    background-color: var(--logo_color);
+}
+.dashboard_main .right{
+    width: 82%;
+    height: auto;
+}
+.dashboard_main .right .filter_record{
+    width: 94%;
+    height: auto;
+    margin: 2rem auto;
+}
+.dashboard_main .right .filter_record .filter_box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.dashboard_main .right .filter_record .filter_box h2{
+    font-weight: 500;
+}
+.dashboard_main .right .filter_record .filter_box input{
+    outline: none;
+    border: .1px solid silver;
+    width: 30%;
+    height: 30px;
+    padding: 0rem .4rem;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+
+
+/* FLOATING BUTTON FOR SETTINGS */
+.icon{
+    position: fixed;
+    top: 85%;
+    bottom: 3%;
+    left: 93%;
+    right: 2%;
+    background-color: transparent;
+}
+.icon i{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    background-color: var(--logo_color);
+    opacity: .8;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 1px 1px 15px .1px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 90%;
+    height: 500px;
+    margin-top: 2rem;
+}
+.slideshowSlider {
+    white-space: nowrap;
+    transition: ease .8s;
+}
+.slide {
+    display: inline-block;
+    height: 500px;
+    min-height: 450px;
+    width: 100%;
+    position: relative;
+}
+.slide .img_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(78, 200, 164, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    padding: 0rem 1rem;
+}
+.slide .img_overlay h1{
+    margin-bottom: 1rem;
+    font-size: 40px;
+}
+.slide .img_overlay p{
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+    height: auto;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+.slideshowDots {
+    text-align: center;
+}
+.slideshowDot {
+    display: inline-block;
+    height: 80px;
+    width: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 15px 7px 0px;
+    border: .1px solid var(--logo_color);
+} 
+.slideshowDot.active {
+    background-color: var(--logo_color);
+}
+
+
+
+
+/* APPEX CHARTS */
+.charts{
+    width: 90%;
+    height: auto;
+    margin: 4rem auto;
+}
+.charts h1{
+    margin-bottom: 1rem;
+    font-size: 25px;
+    font-weight: 500;
+}
+.chart{
+    width: 90%;
+    height: 320px;
+    color: var(--logo_color);
+}
+.charts .pagination_btns{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.charts .pagination_btns button{
+    border: .2px solid var(--logo_color);
+    border-radius: 8px;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+}
+.charts .pagination_btns button i{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+/* EMPLOYES STYLING  */
+.employes_list{
+    width: 96%;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    align-items: c;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+.employes_list h2{
+    font-size: 30px;
+    font-weight: 500;
+}
+.employes_list button{
+    outline: none;
+    border: none;
+    background-color: var(--logo_color);
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    width: 150px;
+    height: 40px;
+}
+.entries{
+    width: 96%;
+    height: auto;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.entries select{
+    padding: .1rem;
+    margin: 0rem .3rem;
+}
+.entries .searchbar{
+    width: 30%;
+    height: 30px;
+    border: .1px solid silver;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem .6rem;
+}
+.entries .searchbar input{
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 90%;
+}
+.entries .searchbar i{
+    width: 10%;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-left: .1px solid silver;
+}
+.user_table{
+    max-width: 96%;
+    min-width: 550px;
+    margin: 1rem auto;
+    height: auto;
+    overflow-x: auto;
+}
+.user_table table{
+    width: 100%;
+    min-width: 650px;
+    margin: auto;
+    height: auto;
+    text-align: left;
+    min-width: 900px;
+    overflow-x: auto;
+}
+table, tr, td, th{
+    border: .5px solid silver;
+    border-collapse: collapse;
+    padding: .5rem 1rem;
+}
+table th{
+    background-color: var(--logo_color);
+    color: white;
+    font-weight: 500;
+}
+.user_table table thead .fa{
+    float: right;
+    cursor: pointer;
+}
+table tbody tr td .fa{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    background-color: var(--logo_color);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+table tbody tr #last_child{
+    padding-left: 0rem;
+    text-align: center;
+}
+table tbody tr td .fa-trash{
+    background-color: red;
+    margin-left: .4rem;
+}
+
+.fa-times-circle{
+    font-size: 25px!important;
+}
+
+.show_overlay{
+    position: fixed;
+    top: -100%;
+    bottom: 100%;
+    left: 0%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+.show_overlay_active{
+    top: 0;
+    bottom: 0;
+}
+
+.show_update_overlay{
+    position: fixed;
+    top: -100%;
+    bottom: 100%;
+    left: 0%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+.show_update_overlay_active{
+    top: 0;
+    bottom: 0;
+}
+
+.inner{
+    width: 40%;
+    height: 85%;
+    margin: 3.5% auto;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+.inner .heading{
+    width: 92%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    border-bottom: 1px solid silver;
+}
+h2{
+    font-weight: 500;
+}
+.inner .heading i{
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.inner .credentials{
+    width: 92%;
+    height: auto;
+    margin: 2rem auto;
+}
+.inner .credentials .error_msg{
+    width: 95%;
+    height: auto;
+    padding: .4rem .6rem;
+    border: .1px solid red;
+    border-radius: 5px;
+    color: red;
+    background-color: rgb(240, 196, 196);
+    margin-bottom: 1rem;
+}
+.inner .credentials form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.inner .credentials form label{
+    margin-bottom: .4rem;
+}
+.inner .credentials form input{
+    height: 30px;
+    border: .2px solid gray;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+.inner .credentials form input:focus{
+    outline-color: var(--logo_color);
+}
+.inner .credentials form button{
+    width: 100px;
+    outline: none;
+    border: none;
+    background-color: var(--logo_color);
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+
+/* QUERIES FOR RESPONSIVE DESIGN */
+@media screen and (max-width: 900px) {
+    .dashboard_main .left{
+        width: 0%;
+    }
+    .dashboard_main .right{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .slideshow {
+        margin: 0 auto;
+        overflow: hidden;
+        width: 94%;
+        height: 450px;
+        margin-top: 2rem;
+    }
+    .inner{
+        width: 60%;
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .icon{
+        top: 85%;
+        left: 85%;
+        right: 5%;
+    }
+    .slideshow {
+        margin-top: 3rem;
+        height: 400px;
+    }
+    .inner{
+        width: 85%;
+    }
+    .employes_list{
+        width: 96%;
+    }
+    .employes_list h2{
+        font-size: 25px;
+    }
+    .employes_list button{
+        font-size: 14px;
+        width: 100px;
+        height: 35px;
+    }
+    .entries .searchbar{
+        width: 50%;
+        padding: 0rem .4rem;
+    }
+    
+}
+
+@media screen and (max-width: 450px){
+    .icon{
+        top: 85%;
+        left: 80%;
+        right: 10%;
+    }
+    .slideshow {
+        width: 96%;
+        height: 300px;
+    }
+    .inner{
+        width: 95%;
+    }
+    .inner .heading{
+        width: 92%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        border-bottom: 1px solid silver;
+    }
+    h2{
+        font-size: 20px;
+    }
+    .entries{
+        flex-direction: column;
+    }
+    .entries .searchbar{
+        margin-top: 1.5rem;
+        width: 90%!important;
+    }
+}
+
+
+@media screen and (max-width: 350px){
+    .icon{
+        top: 85%;
+        left: 75%;
+        right: 15%;
+    }
+    .slideshow {
+        height: 200px;
+    }
+    .employes_list h2{
+        font-size: 20px;
+    }
+    .employes_list button{
+        font-size: 12px;
+        width: 80px;
+        height: 35px;
+    }
+}

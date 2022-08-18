@@ -1,14 +1,21 @@
 import React, {Suspense, useState} from "react"
 import { Routes, Route } from "react-router-dom"
-import Setting from "./components/admin/FloatingButton/Setting"
-import Header from "./components/Header/Header"
-const Form = React.lazy(() => import("./components/Form/Form"))
-const UpdatePin = React.lazy(() => import("./components/Form/UpdatePin"))
-const Card = React.lazy(() => import("./components/User/Card"))
-const Admin = React.lazy(() => import("./components/admin/Admin"))
-const Login = React.lazy(() => import("./components/admin/Login"))
-const EmpSetting  = React.lazy(() => import("./components/admin/FloatingButton/Settings/EmpSetting"))
-const EmpUpdate  = React.lazy(() => import("./components/admin/FloatingButton/EmpUpdate"))
+import { Provider } from "react-redux"
+import Float from "./AdminPanel/Settings/Float"
+import store from "./Redux/store"
+const AdminLogin = React.lazy(() => import("./AdminPanel/AdminLogin/AdminLogin"))
+const EmpLogin  = React.lazy(() => import("./EmployeePanel/EmpLogin/EmpLogin"))
+const Header  = React.lazy(() => import("./AdminPanel/Header/Header"))
+const Dashboard  = React.lazy(() => import("./AdminPanel/Dashboard/Dashboard"))
+const Employes = React.lazy(() => import("./AdminPanel/Dashboard/Sub-Files/Employes"))
+const Attendance = React.lazy(() => import("./AdminPanel/Dashboard/Sub-Files/Attendance"))
+const AdminSetting = React.lazy(() => import("./AdminPanel/Settings/AdminSetting"))
+const UpdateUserPin = React.lazy(() => import("./EmployeePanel/EmpLogin/UpdateUserPin"))
+const FilterEmpRecord = React.lazy(() => import("./EmployeePanel/Dashboard/Sub-Files/FilterEmpRecord"))
+
+const EmpHeader = React.lazy(() => import("./EmployeePanel/EmpHeader/EmpHeader"))
+const EmpDashboard = React.lazy(() => import("./EmployeePanel/Dashboard/EmpDashboard"))
+const EmpAttendance = React.lazy(() => import("./EmployeePanel/Dashboard/Sub-Files/EmpAttendance"))
 
 const App = () => {
   const[ID, setID] = useState();
@@ -18,6 +25,7 @@ const App = () => {
   }
 
   return (
+    <Provider store={store}>
     <Suspense fallback={
       <div className="loading">
         <div className="loader_inner">
@@ -26,22 +34,69 @@ const App = () => {
       </div>
     }>
 
-      <Header/>
       <Routes>
-          <Route path="/" element={ <Form userID={userID} /> } />
-          <Route path="/update-user-pin" element={ <UpdatePin ID={ID} /> } />
-          <Route path="/:id" element={ <Card /> } />
-          <Route path="/admin-login" element={ <Login /> } />
-          <Route path="/admin/:id" element={ 
-            <>
-              <Admin />
-              <Setting />
-            </>
-           } />
-          <Route path="/admin-settings" element={ <EmpSetting /> } />
-          <Route path="/update/:id" element={ <EmpUpdate /> } />
+          <Route path="/admin-login-page" element={ <AdminLogin /> } />
+          <Route path="/admin-dashboard" element={
+              <>
+                <Header />
+                <Dashboard />
+                <Float />
+              </>
+            } />
+          
+          <Route path="/employes-record" element={
+              <>
+                <Header />
+                <Employes />
+                <Float />
+              </>
+            } />
+
+          <Route path="/employes-attendance" element={
+              <>
+                <Header />
+                <Attendance />
+                <Float />
+              </>
+            } />
+
+          <Route path="/admin-employes-settings" element={
+              <>
+                <Header />
+                <AdminSetting />
+              </>
+            } />
+
+
+            {/* EMPLOYES NAV PATHS */}
+            <Route path="/employee-home/:id" element={
+              <>
+                <EmpHeader />
+                <EmpDashboard />
+              </>
+            } />
+
+            <Route path="/employee-attendance/:id" element={
+              <>
+                <EmpHeader />
+                <EmpAttendance />
+              </>
+            } />
+
+            <Route path="/filter-employee-record/:id" element={
+              <>
+                <EmpHeader />
+                <FilterEmpRecord />
+              </>
+            } />
+
+            <Route path="/" element={ <EmpLogin /> } />
+
+            <Route path="/employee-login_update" element={ <UpdateUserPin /> } />
+            <Route path="*" element={<EmpLogin />} />
       </Routes>
     </Suspense>
+    </Provider>
   )
 }
 
