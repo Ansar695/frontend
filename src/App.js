@@ -1,4 +1,4 @@
-import React, {Suspense, useState} from "react"
+import React, {Suspense} from "react"
 import { Routes, Route } from "react-router-dom"
 import { Provider } from "react-redux"
 import Float from "./AdminPanel/Settings/Float"
@@ -18,11 +18,6 @@ const EmpDashboard = React.lazy(() => import("./EmployeePanel/Dashboard/EmpDashb
 const EmpAttendance = React.lazy(() => import("./EmployeePanel/Dashboard/Sub-Files/EmpAttendance"))
 
 const App = () => {
-  const[ID, setID] = useState();
-
-  const userID = (id) => {
-    setID(id)
-  }
 
   return (
     <Provider store={store}>

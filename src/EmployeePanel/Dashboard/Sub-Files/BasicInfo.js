@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { logedInUser, UpdateShow } from '../../../Redux/Actions/Action'
 import "../empdashboard.css"
 import EmpUpdateOverlay from './EmpUpdateOverlay'

@@ -41,7 +41,7 @@ const LeaveOverlay = () => {
     <div className="inner">
         <div className="heading">
             <h2>Apply for leave</h2>
-            <i className='fa fa-times' onClick={()=>dispatch(leaveState(false))}></i>
+            <i className='fa fa-times-circle' onClick={()=>dispatch(leaveState(false))}></i>
         </div>
         <div className="credentials">
             <form>

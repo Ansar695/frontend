@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import images from './DataImages';
 

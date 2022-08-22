@@ -12,7 +12,7 @@ const EmpAttendChart = () => {
 
     let catArr = [1, 2, 3, 4, 5, 6, 7]
     let dataArr = [1, 0]
-    let dayArr = []
+    // let dayArr = []
     let perArr = []
     
     user&&user.schedule&&user.schedule.map((u) => {

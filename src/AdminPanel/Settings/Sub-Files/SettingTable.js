@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { SetShow } from '../../../Redux/Actions/Action'
 
@@ -6,12 +6,26 @@ const SettingTable = () => {
     const[users, setUsers] = useState()
     const text = useSelector(state => state)
     const dispatch = useDispatch()
-
+    
     const[dir, setDir] = useState({
       nameDir: false,
       emailDir: false,
       idDir: false
     })
+
+    const searchText = () => {
+        const byName = users&&users.filter((user) => {
+            return Object.values(user.name).join('').toLowerCase().includes(text.text&&text.text.toLowerCase())
+        } )
+        console.log(text)
+        setUsers(byName)
+    }
+    
+    useMemo(() => {
+        if(text.text){
+            searchText()
+        }
+    }, [text.text])
   
   //  GET ALL EMPLOYES
   const getEmployes = async() => {
@@ -83,7 +97,7 @@ const SettingTable = () => {
             },
             body: JSON.stringify({id})
         })
-        const data = await res.json()
+        // const data = await res.json()
         if(res.status===200){
             alert("Employee deleted...")
             getEmployes()
@@ -119,7 +133,7 @@ const SettingTable = () => {
             </thead>
             <tbody>
             {users?users.map((usr) => (
-                    <tr>
+                    <tr key={usr._id}>
                         <td>{usr.name?usr.name:'New Employee'}</td>
                         <td>{usr.email?usr.email:'New Employee'}</td>
                         <td>{usr.id}</td>

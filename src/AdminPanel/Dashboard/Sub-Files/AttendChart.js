@@ -94,7 +94,7 @@ const AttendChart = () => {
         <h1>Employes Attendance Graphs</h1>
         <Chart options={options&&options} series={options.series} type="bar" className="chart" />
         <div className="pagination_btns">
-            <button disabled={displayUsers.min==0?true:false} className='Prev' onClick={DecreaseUsers}><i className='fa fa-angle-double-left'></i> Prev</button>
+            <button disabled={displayUsers.min===0?true:false} className='Prev' onClick={DecreaseUsers}><i className='fa fa-angle-double-left'></i> Prev</button>
             <button className='Next' onClick={IncreaseUsers}>Next <i className='fa fa-angle-double-right'></i></button>
         </div>
     </div>

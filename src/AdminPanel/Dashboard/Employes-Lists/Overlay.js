@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { ChangeState } from '../../../Redux/Actions/Action'
 
 const Overlay = () => {
@@ -99,7 +99,7 @@ const Overlay = () => {
     <div className="inner">
         <div className="heading">
             <h2>Add New Employee</h2>
-            <i className='fa fa-times-circle'onClick={()=>dispatch(ChangeState(false))}></i>
+            <i className='fa fa-times-circle' onClick={()=>dispatch(ChangeState(false))}></i>
         </div>
         <div className="credentials">
           <p className='error_msg' style={{

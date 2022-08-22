@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import React, {useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { userID } from '../../Redux/Actions/Action';
 import "../../EmployeePanel/EmpLogin/emplogin.css"
 
 const AdminLogin = () => {
@@ -24,7 +22,7 @@ const AdminLogin = () => {
             },
             body: JSON.stringify({id, pin})
           })
-          const data = await res.json()
+          
           if(res.status===200){
             alert("Log In successful")
             navigate(`/admin-dashboard`)

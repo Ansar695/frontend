@@ -133,7 +133,7 @@ useEffect(() => {
                         <td>{usr.email?usr.email:'New Employee'}</td>
                         <td>{usr.id}</td>
                         <td>{u.date}</td>
-                        <td style={u.leave=="yes"?{color: "red"}:{color: "black"}}>{u.leave=="yes"?'On-Leave':'Present'}</td>     
+                        <td style={u.leave==="yes"?{color: "red"}:{color: "black"}}>{u.leave==="yes"?'On-Leave':'Present'}</td>     
                     </tr>
                     ))}
                     </>
