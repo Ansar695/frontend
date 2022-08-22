@@ -13,7 +13,7 @@ const UserTable = () => {
     idDir: false
   })
 
-//  GET ALL EMPLOYES
+//  GET ALL EMPLOYES Data
 const getEmployes = async() => {
     try {
         const res = await fetch(`/get_employes`, {
