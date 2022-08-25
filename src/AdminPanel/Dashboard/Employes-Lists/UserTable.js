@@ -32,7 +32,7 @@ const getEmployes = async() => {
 const searchText = () => {
     const byName = users&&users.filter((user) => {
         return Object.values(user.name).join('').toLowerCase().includes(text.text&&text.text.toLowerCase())
-    } )
+    })
     setUsers(byName)
 }
 

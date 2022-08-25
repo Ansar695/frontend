@@ -10,22 +10,24 @@ const EmpAttendChart = () => {
         max: 2
     })
 
-    let catArr = [1, 2, 3, 4, 5, 6, 7]
-    let dataArr = [1, 0]
+    let catArr = []
+    let dataArr = []
     let perArr = []
     
     user&&user.schedule&&user.schedule.map((u) => {
         if(u.leave === "yes"){
-            perArr.push(0)
+            catArr.push(u.date)
+            dataArr.push(0)
         }else{
             const startH = new Date(u.date+","+u.start).getTime()
             const endH = new Date(u.date+","+u.end).getTime()
             let diff = (endH - startH)/1000
             diff /= (60*60)
-            const hrs = Math.floor(Math.abs(diff))
-            let per = Math.floor(hrs/9)
-            
+            const hrs = Math.abs(diff)
+            let per = Math.ceil((hrs/8)*100)
+            console.log("HRS")
             console.log(hrs)
+            catArr.push(u.date)
             dataArr.push(per+1)
         }
     })

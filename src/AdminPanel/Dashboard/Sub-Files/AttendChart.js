@@ -25,7 +25,6 @@ const AttendChart = () => {
         const l = user.schedule.length
         var percen = Math.floor((attend/l)*100)
         attend = 0
-        console.log(percen, attend, total, l)
         dataArr.push(percen)
     })
 

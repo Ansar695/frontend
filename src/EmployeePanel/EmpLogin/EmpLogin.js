@@ -121,7 +121,6 @@ const EmpLogin = () => {
           </div>
 
           <div className="login_content">
-            <NavLink className="navlink" to="/help">Need help?</NavLink>
             <div className="login_box">
               <h2>Login</h2>
 
