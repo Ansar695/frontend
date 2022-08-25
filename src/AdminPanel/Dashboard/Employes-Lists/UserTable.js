@@ -1,12 +1,9 @@
-import React, { useState }  from 'react'
-import { useMemo } from 'react'
-import { useEffect } from 'react'
+import React, { useState, useMemo, useEffect }  from 'react'
 import { useSelector } from 'react-redux'
 
 const UserTable = () => {
   const[users, setUsers] = useState()
   const text = useSelector(state => state)
-    console.log(text.text)
   const[dir, setDir] = useState({
     nameDir: false,
     emailDir: false,
@@ -36,7 +33,6 @@ const searchText = () => {
     const byName = users&&users.filter((user) => {
         return Object.values(user.name).join('').toLowerCase().includes(text.text&&text.text.toLowerCase())
     } )
-
     setUsers(byName)
 }
 
@@ -85,8 +81,6 @@ const sortById = async() => {
     })
     setUsers(myData)
 }
-
-
 
 useEffect(() => {
     getEmployes()

@@ -37,6 +37,15 @@ const EmpLogin = () => {
       errorHandler()
     }
 
+    else if(id.length !== 6){
+      setErrorMsg({
+        text: "Invalid Id",
+        dispay: "block",
+        color: 'red'
+      });
+      errorHandler()
+    }
+
     else if(pin.length <= 3 || pin.length >= 5 || isNaN(pin)){
       setErrorMsg({
         ...errorMsg,
@@ -69,7 +78,7 @@ const EmpLogin = () => {
             })
             errorHandler()
           }
-          else if(pin == "0000"){
+          else if(pin === "0000"){
             dispatch(userID(id))
             console.log(id)
             alert("Enter a new PIN Code again.")

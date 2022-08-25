@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { SetShow, UpdateShow } from '../../../Redux/Actions/Action'
 import "../../../AdminPanel/Dashboard/dashboard.css"
@@ -7,8 +6,6 @@ import "../../../AdminPanel/Dashboard/dashboard.css"
 const EmpUpdateOverlay = () => {
     const dispatch = useDispatch()
     const id = useSelector(state => state)
-    console.log("ghs")
-    console.log(id.updateId)
 
     const[userData, setUserData] = useState({
       name: "",
@@ -16,7 +13,6 @@ const EmpUpdateOverlay = () => {
       mobile: "",
       pin: ""
     })
-
     const[errorMsg, setErrorMsg] = useState({
       text: "",
       dispay: "none",
@@ -26,7 +22,6 @@ const EmpUpdateOverlay = () => {
     const handleChange = (e) => {
         const name = e.target.name
         const val = e.target.value
-    
         setUserData({
           ...userData,
           [name]: val
@@ -57,9 +52,8 @@ const EmpUpdateOverlay = () => {
             console.error(error)
         }
     }
-
     useMemo(() => {
-        if(id.updateId != undefined){
+        if(id.updateId !== undefined){
             getSingleEmployee()
         }
     }, [id.updateId])
@@ -68,7 +62,7 @@ const EmpUpdateOverlay = () => {
         e.preventDefault()
         const {name, email, mobile, pin} = userData
         console.log({name, email, mobile, pin})
-        if(name===""||email==="" || mobile==="" || pin=="" || id.updateId==""){
+        if(name===""||email==="" || mobile==="" || pin==="" || id.updateId===""){
           setErrorMsg({
             color: "red",
             text: "All fields are required!",
@@ -124,7 +118,7 @@ const EmpUpdateOverlay = () => {
     <div className="inner">
         <div className="heading">
             <h2>Update Info</h2>
-            <i className='fa fa-times' onClick={()=>dispatch(UpdateShow(false, ""))}></i>
+            <i className='fa fa-times-circle' onClick={()=>dispatch(UpdateShow(false, ""))}></i>
         </div>
         <div className="credentials">
           <p className='error_msg' style={{

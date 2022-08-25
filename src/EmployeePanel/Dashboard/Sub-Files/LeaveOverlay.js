@@ -22,7 +22,6 @@ const LeaveOverlay = () => {
                 },
                 body: JSON.stringify({leave})
             })
-            const data = await res.json()
             if(res.status === 400){
                 alert("Invalid date, This date is already spent")
                 dispatch(leaveState(false))

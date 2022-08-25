@@ -60,7 +60,7 @@ const Overlay = () => {
           })
           if(res.status===201){
             setErrorMsg({
-              text: "Employee ID and Pin Code already exit",
+              text: "Please try Different email or Id",
               dispay: "block",
               color: "red",
             })

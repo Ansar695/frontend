@@ -30,10 +30,10 @@ const MarkAttendance = () => {
         if(res.status===200){
             setUser(data)
             data&&data.schedule&&data.schedule.map((d) => {
-                if(d.date==todayDate && d.start!="" && d.end == "06:00:00 PM"){
+                if(d.date===todayDate && d.start!=="" && d.end === "06:00:00 PM"){
                     setCheck(true)
                 }
-                else if(d.date===todayDate && d.start!=="" && d.end != "06:00:00 PM"){
+                else if(d.date===todayDate && d.start!=="" && d.end !== "06:00:00 PM"){
                     setCheck(false)
                     labelRef.current.style.color="silver"
                     checkRef.current.disabled=true
@@ -45,9 +45,6 @@ const MarkAttendance = () => {
                     leaveRef.current.disabled = true
                     leaveRef.current.style.backgroundColor = "red"
                     leaveRef.current.style.cursor = "auto"
-                }else{
-                    setCheck(false)
-                    checkRef.disabled=false
                 }
             })
         }
@@ -67,7 +64,7 @@ const MarkAttendance = () => {
                 "content-type": "application/json"
             }
         })
-        const data = await res.json()
+        
         if(res.status===200){
             getUser()
         }
@@ -87,7 +84,7 @@ const MarkAttendance = () => {
                 "content-type": "application/json"
             },
         })
-        const data = await res.json()
+        
         if(res.status===200){
             getUser()
         }
@@ -149,11 +146,11 @@ const MarkAttendance = () => {
                     <tbody>
                     {user&&user.schedule&&user.schedule.map((usr) => (
                         <>
-                        {usr.date == todayDate&&
+                        {usr.date === todayDate&&
                             <tr>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td style={usr.leave=="yes"?{color: "red"}:{color: "black"}}>{usr.leave=="yes"?'On-Leave':'Present'}</td>
+                                <td style={usr.leave==="yes"?{color: "red"}:{color: "black"}}>{usr.leave==="yes"?'On-Leave':'Present'}</td>
                                 <td>{usr.start?usr.start:"N/A"}</td>
                                 <td>{usr.end?usr.end:"N/A"}</td>        
                             </tr>

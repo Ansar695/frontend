@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import "./emplogin.css"
 
 const UpdateUserPin = () => {
     const {userid} = useSelector(state => state)
     const navigate = useNavigate();
-    const[id, setId] = useState(userid)
+    let id = userid
     const[pin, setPin] = useState('')
     const[userData, setUserData] = useState({
       name: "",
@@ -41,7 +41,7 @@ const UpdateUserPin = () => {
     e.preventDefault()
     const {name, email, mobile} = userData
     console.log({name, email, mobile})
-    if(name===""||email==="" || mobile==="" || pin==="" || id ==""){
+    if(name===""||email==="" || mobile==="" || pin==="" || id ===""){
       setErrorMsg({
         color: "red",
         text: "All fields are required!",

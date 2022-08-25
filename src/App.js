@@ -23,9 +23,7 @@ const App = () => {
     <Provider store={store}>
     <Suspense fallback={
       <div className="loading">
-        <div className="loader_inner">
           <h1>Loading...</h1>
-        </div>
       </div>
     }>
 

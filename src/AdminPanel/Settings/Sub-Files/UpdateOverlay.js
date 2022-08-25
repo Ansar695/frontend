@@ -56,7 +56,7 @@ const UpdateOverlay = () => {
     }
 
     useMemo(() => {
-        if(id.id != undefined){
+        if(id.id !== undefined){
             getSingleEmployee()
         }
     }, [id.id])

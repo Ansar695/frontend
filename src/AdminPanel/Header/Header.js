@@ -8,8 +8,7 @@ const Header = () => {
   return (
     <>
     <div className="nav">
-        {/* <img className='logo_img' src="./images/emumba-logo.png" alt="" /> */}
-        <p className='logo_name'>Emumba Pvt LTD</p>
+        <p data-testid="logo_title" className='logo_name'>Emumba Pvt LTD</p>
         <i className={`fa ${show?'fa-times': 'fa-bars'}`} onClick={()=>setShow(!show)}></i>
     </div>
     <div className={`dashboard ${show?'dashboard_active':''}`}>
