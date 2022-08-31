@@ -4,6 +4,7 @@ import { SetShow } from '../../../Redux/Actions/Action'
 
 const SettingTable = () => {
     const[users, setUsers] = useState()
+    const[usersRecord, setUsersRecord] = useState()
     const text = useSelector(state => state)
     const dispatch = useDispatch()
     
@@ -14,7 +15,7 @@ const SettingTable = () => {
     })
 
     const searchText = () => {
-        const byName = users&&users.filter((user) => {
+        const byName = usersRecord&&usersRecord.filter((user) => {
             return Object.values(user.name).join('').toLowerCase().includes(text.text&&text.text.toLowerCase())
         } )
         console.log(text)
@@ -40,6 +41,7 @@ const SettingTable = () => {
           const data = await res.json()
           if(res.status===200){
               setUsers(data)
+              setUsersRecord(data)
           }
       } catch (error) {
           console.error(error)
@@ -49,14 +51,7 @@ const SettingTable = () => {
   // SORTING BY NAME
   const sortByName = async() => {
       setDir({...dir, nameDir: !dir.nameDir})
-  
-      const myData = [].concat(users).sort((a, b) => {
-          if(a.name > b.name){
-              return 1
-          }else{
-              return -1
-          }
-      })
+      const myData = [...users].sort((a, b) => a.name > b.name ? -1 : 1)
       setUsers(myData)
   }
   

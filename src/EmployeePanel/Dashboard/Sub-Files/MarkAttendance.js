@@ -46,6 +46,10 @@ const MarkAttendance = () => {
                     leaveRef.current.style.backgroundColor = "red"
                     leaveRef.current.style.cursor = "auto"
                 }
+                else if(d.date===todayDate && d.leave === "yes" && d.start===""){
+                    labelRef.current.style.color="silver"
+                    checkRef.current.disabled=true
+                }
             })
         }
     } catch (error) {
@@ -56,7 +60,6 @@ const MarkAttendance = () => {
   //   PUNCH IN
   const setPunchIn = async() => {
     const id = params.id
-    console.log(id)
     try {
         const res = await fetch(`/punch/${id}`, {
             method: "POST",
@@ -76,7 +79,6 @@ const MarkAttendance = () => {
   //   PUNCH OUT
   const setPunchOut = async() => {
     const id = params.id
-    console.log(id)
     try {
         const res = await fetch(`/update/${id}`, {
             method: "POST",
@@ -106,16 +108,17 @@ const MarkAttendance = () => {
 
         <div className="top">
             <div className="date">
-                <p>{todayDate}</p>
+                <p data-testid="para">{todayDate}</p>
             </div>
             <div className="toggle">
                 <label className='toggle_label' ref={labelRef}>
                 {check?"Punch-Out": "Punch-In"}
                 </label>
-                <label className='switch'>
+                <label data-testid="checkbox_label" className='switch'>
                     <input type="checkbox" 
                         ref={checkRef}
                         checked={check}
+                        data-testid="check_input"
                         onChange={(e)=>setCheck(!check)} 
                         onClick={()=>{
                             if(check===false){
@@ -147,8 +150,8 @@ const MarkAttendance = () => {
                     {user&&user.schedule&&user.schedule.map((usr) => (
                         <>
                         {usr.date === todayDate&&
-                            <tr>
-                                <td>{user.name}</td>
+                            <tr key={usr._id}>
+                                <td data-testid="user-data">{user.name}</td>
                                 <td>{user.email}</td>
                                 <td style={usr.leave==="yes"?{color: "red"}:{color: "black"}}>{usr.leave==="yes"?'On-Leave':'Present'}</td>
                                 <td>{usr.start?usr.start:"N/A"}</td>

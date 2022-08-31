@@ -132,10 +132,10 @@ const EmpLogin = () => {
 
               <form>
                 <label>Employee Id</label>
-                <input type="text" name="id" value={id} onChange={(e)=>setId(e.target.value)} placeholder='Enter your employee id...' />
+                <input type="text" autoComplete='off' name="id" value={id} onChange={(e)=>setId(e.target.value)} placeholder='Enter your employee id...' />
 
                 <label>Pin Code</label>
-                <input type="text" name="pin" value={pin} onChange={(e)=>setPin(e.target.value)} placeholder='Enter your employee id...' />
+                <input type="text" autoComplete='off' name="pin" value={pin} onChange={(e)=>setPin(e.target.value)} placeholder='Enter your employee id...' />
 
                 <button type='submit' onClick={submitData}>Login Now</button>
               </form>

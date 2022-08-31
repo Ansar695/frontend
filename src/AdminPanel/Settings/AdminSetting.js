@@ -24,7 +24,7 @@ const AdminSetting = () => {
             </div>
             <div className="entries">
                 <div className="entry_num">
-                  {/* Show 
+                  Show 
                   <select>
                     <option value="all">All</option>
                     <option value="5">5</option>
@@ -32,7 +32,7 @@ const AdminSetting = () => {
                     <option value="15">15</option>
                     <option value="20">20</option>
                   </select> 
-                  entries */}
+                  entries
                 </div>
                 <div className="searchbar">
                   <input type="text" placeholder='Search here Name, Email, Id... ' 

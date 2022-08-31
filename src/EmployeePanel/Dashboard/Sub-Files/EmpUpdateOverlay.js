@@ -128,7 +128,7 @@ const EmpUpdateOverlay = () => {
           }}>{errorMsg.text}</p>
             <form>
                 <label>Full Name</label>
-                <input type="text" name='name' value={userData.name} onChange={handleChange} />
+                <input data-testid="fname" type="text" name='name' value={userData.name} onChange={handleChange} />
 
                 <label>Mobile</label>
                 <input type="text" name='mobile' value={userData.mobile} onChange={handleChange} />
@@ -137,7 +137,7 @@ const EmpUpdateOverlay = () => {
                 <input type="email" name='email' value={userData.email} onChange={handleChange} />
 
                 <label>Pin Code</label>
-                <input type="email" name='email' value={userData.pin} onChange={handleChange} />
+                <input type="pin" name='pin' value={userData.pin} onChange={handleChange} />
 
                 <button onClick={submitData}>Save</button>
             </form>

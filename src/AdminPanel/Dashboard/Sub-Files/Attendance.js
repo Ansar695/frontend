@@ -127,8 +127,8 @@ useEffect(() => {
             <tbody>
             {users?users.map((usr) => 
                     <>
-                    {usr&&usr.schedule.map((u) => (
-                      <tr>
+                    {usr&&usr.schedule.map((u, index) => (
+                      <tr key={index}>
                         <td>{usr.name?usr.name:'New Employee'}</td>
                         <td>{usr.email?usr.email:'New Employee'}</td>
                         <td>{usr.id}</td>

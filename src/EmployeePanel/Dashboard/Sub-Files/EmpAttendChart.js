@@ -25,10 +25,9 @@ const EmpAttendChart = () => {
             diff /= (60*60)
             const hrs = Math.abs(diff)
             let per = Math.ceil((hrs/8)*100)
-            console.log("HRS")
-            console.log(hrs)
+            
             catArr.push(u.date)
-            dataArr.push(per+1)
+            dataArr.push(per)
         }
     })
 
@@ -94,7 +93,7 @@ const EmpAttendChart = () => {
 
   return (
     <div className='charts'>
-        <h1>Employes Attendance Graphs</h1>
+        <h1 role="heading1">Employes Attendance Graphs</h1>
         <Chart options={options&&options} series={options.series} type="bar" className="chart" />
         <div className="pagination_btns">
             <button disabled={displayUsers.min===0?true:false} className='Prev' onClick={DecreaseUsers}><i className='fa fa-angle-double-left'></i> Prev</button>

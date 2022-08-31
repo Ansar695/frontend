@@ -68,18 +68,18 @@ const AdminLogin = () => {
             <div className="login_box">
               <h2>Login</h2>
 
-              <p className='error_msg' style={{
+              <p data-testid="para_error" className='error_msg' style={{
                   display: errorMsg.dispay,
                   color: errorMsg.color,
                   borderColor: errorMsg.color
               }}>{errorMsg.text}</p>
 
               <form>
-                <label>Employee Id</label>
-                <input data-testid="input_id" type="text" name="id" value={id} onChange={(e)=>setId(e.target.value)} placeholder='Enter your employee id...' />
+                <label htmlFor='employee_id'>Employee Id</label>
+                <input id='employee_id' autoComplete='off' type="text" name="id" value={id} onChange={(e)=>setId(e.target.value)} placeholder='Enter your employee id...' />
 
-                <label>Pin Code</label>
-                <input type="text" name="pin" value={pin} onChange={(e)=>setPin(e.target.value)} placeholder='Enter your employee id...' />
+                <label htmlFor='pin_code'>Pin Code</label>
+                <input id='pin_code' autoComplete='off' type="text" name="pin" value={pin} onChange={(e)=>setPin(e.target.value)} placeholder='Enter your pin code...' />
 
                 <button type='submit' onClick={submitData}>Login Now</button>
               </form>

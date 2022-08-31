@@ -7,6 +7,7 @@ import "../../../AdminPanel/Dashboard/dashboard.css"
 const FilterEmpRecord = () => {
     const params = useParams()
     const[user, setUser] = useState()
+    const[userRecord, setUserRecord] = useState()
 
     const getUser = async() => {
         const id = params.id
@@ -21,6 +22,7 @@ const FilterEmpRecord = () => {
             const data = await res.json()
             if(res.status===200){
                 setUser(data)
+                setUserRecord(data)
             }
         } catch (error) {
             console.error(error)
@@ -30,8 +32,13 @@ const FilterEmpRecord = () => {
       const searchUser = async(e) => {
         const search = e.target.value
         const date = new Date(search).toDateString()
-        console.log(date)
-      } 
+        const result = userRecord&&userRecord.schedule&&userRecord.schedule.filter((usr) => usr.date === date)
+        const data = {
+            name: userRecord.name,
+            schedule: result
+        }
+        setUser(data)
+      }
 
       useEffect(() => {
         getUser()
@@ -45,7 +52,7 @@ const FilterEmpRecord = () => {
             <div className="filter_record">
                 <div className="filter_box">
                     <h2>Attendance Record</h2>
-                    <input type="date" onChange={searchUser} />
+                    <input role="date_filter" type="date" onChange={searchUser} />
                 </div>
 
                 <div className="user_table">
@@ -60,8 +67,8 @@ const FilterEmpRecord = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {user&&user.schedule&&user.schedule.map((usr) => (
-                            <tr>
+                    {user&&user.schedule&&user.schedule.map((usr, index) => (
+                            <tr key={usr._id}>
                                 <td>{user.name}</td>
                                 <td>{usr.date}</td>
                                 <td style={usr.leave==="yes"?{color: "red"}:{color: "black"}}>{usr.leave==="yes"?'On-Leave':'Present'}</td>

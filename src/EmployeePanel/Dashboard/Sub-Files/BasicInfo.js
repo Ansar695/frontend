@@ -48,7 +48,7 @@ const BasicInfo = () => {
             <div className="avatar">
                 <h1>{user?user.name.charAt(0):'U'}</h1>
             </div>
-            <h2>{user?user.name:"User Name"}</h2>
+            <h2 data-testid="heading2">{user?user.name:"User Name"}</h2>
             <p>{user?user.mobile: "user mobile"}</p>
             <small>Joined: {new Date(user&&user.login_at).toDateString()}</small>
             <button onClick={() => dispatch(UpdateShow(true, user&&user._id))}>Update Profile</button>
@@ -58,7 +58,7 @@ const BasicInfo = () => {
             <div className="details_wrapper">
                 <div className="child email">
                     <p className='caption'>Email</p>
-                    <p>{user&&user.email}</p>
+                    <p data-testid="user_email">{user&&user.email}</p>
                 </div>
                 <div className="child contacts">
                     <p className='caption'>User Id</p>

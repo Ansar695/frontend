@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 
 const UserTable = () => {
   const[users, setUsers] = useState()
+  const[usersRecord, setUsersRecord] = useState()
   const text = useSelector(state => state)
   const[dir, setDir] = useState({
     nameDir: false,
@@ -23,19 +24,20 @@ const getEmployes = async() => {
         const data = await res.json()
         if(res.status===200){
             setUsers(data)
+            setUsersRecord(data)
         }
     } catch (error) {
         console.error(error)
     }
 }
 
+//SEARCHING USERS
 const searchText = () => {
-    const byName = users&&users.filter((user) => {
+    const byName = usersRecord&&usersRecord.filter((user) => {
         return Object.values(user.name).join('').toLowerCase().includes(text.text&&text.text.toLowerCase())
     })
     setUsers(byName)
 }
-
 useMemo(() => {
     if(text.text){
         searchText()
@@ -107,7 +109,7 @@ useEffect(() => {
             </thead>
             <tbody>
             {users?users.map((usr) => (
-                    <tr>
+                    <tr key={usr._id}>
                         <td>{usr.name?usr.name:'New Employee'}</td>
                         <td>{usr.email?usr.email:'New Employee'}</td>
                         <td>{usr.id}</td>

@@ -5,7 +5,7 @@ const AttendChart = () => {
     const[users, setUsers] = useState()
     const[displayUsers, setDisplayUsers] = useState({
         min: 0,
-        max: 10
+        max: 5
     })
 
     let catArr = []
@@ -70,16 +70,16 @@ const AttendChart = () => {
 
     const IncreaseUsers = () => {
         setDisplayUsers({
-            min: displayUsers.min+10,
-            max: displayUsers.max+10
+            min: displayUsers.min+5,
+            max: displayUsers.max+5
         })
         console.log(displayUsers)
     }
 
     const DecreaseUsers = () => {
         setDisplayUsers({
-            min: displayUsers.min-10,
-            max: displayUsers.max-10
+            min: displayUsers.min-5,
+            max: displayUsers.max-5
         })
         console.log(displayUsers)
     }
